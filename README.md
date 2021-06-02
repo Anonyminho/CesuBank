@@ -1,1 +1,6 @@
 # CesuBank
+# Projeto para a finalização do semestre;
+
+#Colaboradores: Newton Miranda (NyKoNTX)
+
+1º commit: Folder Creation
