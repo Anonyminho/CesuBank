@@ -1,0 +1,135 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+    background: url(/public/img/background.jpg) no-repeat center;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#headBar {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    left: 0px;
+    top: -1px;
+    background-color: rgba(255, 255, 255, 0.33);
+}
+
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -4px;
+}
+
+#navButtons {
+    margin-right: 30px;
+    display: flex;
+}
+
+#funcoes, #criadores, #cesupa {
+    width: 220px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 30px;
+    background: rgba(196, 196, 196, 0);
+    border-radius: 18px;
+    border-color: rgba(196, 196, 196, 0);
+    font-weight: bold;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#criadores, #cesupa {
+    width: 150px;
+    height: 55px;
+    margin-left: 10px;
+}
+
+#cesupa {
+    margin-right: 30px;
+    width: 130px;
+}
+
+#funcoes:hover, #criadores:hover, #cesupa:hover {
+    background: rgba(196, 196, 196, 0.33);
+    cursor: pointer;
+}
+
+.arrow {
+    margin-left: 5px;
+    width: 12px;
+    right: 10px;
+    transform: rotate(-90deg);
+}
+
+#logo1 {
+    width: 65px;
+    margin-top: 20px;
+    margin-right: 860px;
+}
+
+#divisor {
+    margin-top: 18px;
+    width: 2px;
+    height: 55px;
+}
+
+#account {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 71px;
+    margin-right: 10px;
+}
+
+#login {
+    width: 160px;
+    height: 55px;
+    margin-top: 20px;
+    margin-right: 35px;
+    background: rgba(22, 74, 157, 0.59);
+    border-radius: 18px;
+    border-color: rgba(196, 196, 196, 0);
+    font-weight: bolder;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+#login:hover{
+    background: rgba(50, 80, 129, 0.59);
+    cursor: pointer;
+}
+
+#ajuda {
+    width: 90px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background: rgba(196, 196, 196, 0);
+    border-radius: 18px;
+    border-color: rgba(196, 196, 196, 0);
+    font-weight: bold;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+#ajuda:hover {
+    background: rgba(196, 196, 196, 0.33);
+    cursor: pointer;
+}
