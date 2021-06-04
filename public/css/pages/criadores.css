@@ -45,24 +45,32 @@ h2 {
     opacity: 20%;
 }
 
-#infos {
-    display: grid;
+.foto {
+    grid-column: 1;
+    width: 200px;
+    margin-bottom: 45px;
     margin-left: 35px;
 }
 
-.foto {
-    grid-column: 1;
-    width: 109px;
-    height: 109px;
-    border-radius: 50px;
-    margin-bottom: 50px;
+#infos {
+    margin-left: 25px;
+    margin-top: 53px;
+    width: 300px;
+    display: flex;
 }
-#avatarFabio {
-    margin-top: 50px;
+
+.gitFabio {
+    margin-top: 25px;
 }
-.logos {
-    grid-column: 2;
-    margin-top: -150px;
-    margin-left: -300px;
-    width: 36px;
+
+.dcfabio {
+    margin-top: 1px;
+}
+
+.gitnewton{
+    margin-top: 115px;
+}
+
+.dcnewton {
+    margin-top: 1px;
 }

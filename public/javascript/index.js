@@ -1,6 +1,6 @@
 const links = 
 [
-    "www.cesupa.br",
+    "https://www.cesupa.br/",
     "../public/landing-page.html",
     "../public/funcionalidades.html",
     "../public/criadores.html", 
@@ -9,5 +9,5 @@ const links =
 ]
 
 function redirect(index) {
-    window.location = links[index]
+    window.location.href = links[index]
 }
