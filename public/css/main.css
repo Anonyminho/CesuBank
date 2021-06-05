@@ -20,6 +20,22 @@ body {
     background-color: rgba(255, 255, 255, 0.33);
 }
 
+.back {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 40px;
+    color: black;
+}
+
+.back:hover {
+    cursor: pointer;
+}
+
+#logo1 {
+    padding-left: 15px;
+    padding-bottom: 12px;
+}
+
 #buttons {
     display: flex;
     justify-content: flex-end;
@@ -32,7 +48,7 @@ body {
     display: flex;
 }
 
-#funcoes, #criadores, #cesupa {
+#funcoes, #criadores, #cesupa, #minhaConta {
     width: 220px;
     height: 55px;
     margin-top: 20px;
@@ -65,7 +81,7 @@ body {
 }
 
 .arrow {
-    margin-left: 5px;
+    margin-left: 10px;
     width: 12px;
     right: 10px;
     transform: rotate(-90deg);
