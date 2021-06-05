@@ -1,3 +1,17 @@
+if (localStorage.getItem('users')) {
+    users = localStorage.getItem('users').split('},{');
+}
+
+for (var c = 0; c < users.length; c++) {
+    if (users[c][0] != '{') {
+        users[c] = '{' + users[c];
+    }
+
+    if (users[c][users[c].length - 1] != '}') {
+        users[c] += '}';
+    }
+}
+
 const links = 
 [
     "https://www.cesupa.br/",
@@ -10,4 +24,5 @@ const links =
 
 function redirect(index) {
     window.location.href = links[index]
+    localStorage.setItem('users', JSON.stringify(users))
 }
