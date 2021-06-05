@@ -1,0 +1,76 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back {
+    margin-top: 10px;
+    width: 40px;
+    margin-left: 25px;
+    color: black;
+}
+
+.back:hover {
+    cursor: pointer;
+}
+
+#logo1 {
+    padding-left: 15px;
+    padding-bottom: 12px;
+}
+
+#box {
+    width: 800px;
+    height: 570px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.33);
+    border-radius: 25px;
+}
+
+h2 {
+    margin-top: -50px;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#logo2 {
+    width: 65px;
+    margin-top: 30px;
+    margin-left: 350px;
+    opacity: 20%;
+}
+
+.foto {
+    grid-column: 1;
+    width: 200px;
+    margin-bottom: 45px;
+    margin-left: 35px;
+}
+
+#infos {
+    margin-left: 25px;
+    margin-top: 53px;
+    width: 300px;
+    display: flex;
+}
+
+.gitFabio {
+    margin-top: 25px;
+}
+
+.dcfabio {
+    margin-top: 1px;
+}
+
+.gitnewton{
+    margin-top: 115px;
+}
+
+.dcnewton {
+    margin-top: 1px;
+}

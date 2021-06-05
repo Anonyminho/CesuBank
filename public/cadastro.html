@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CesuBank | Banco digital</title>
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/pages/cadastro.css">
+    <link rel="shortcut icon" href="../public/img/logo-cesubank-blue.png" type="image/x-icon">
+</head>
+
+<body>
+    <header id="headBar">
+        <div id="buttons">
+            <img class="back" src="../public/img/chevron-left-solid.png" onclick="redirect(1)">
+            <img id="logo1" src="../public/img/logo-cesubank-blue.png" alt="">
+            <div id="navButtons">
+                <button id="funcoes" onclick="redirect(2)">Funcionalidades<img class="arrow" src="../public/img/chevron-left-solid.png"></button>
+                <button id="criadores" onclick="redirect(3)">Criadores<img class="arrow" src="../public/img/chevron-left-solid.png"></button>
+                <button id="cesupa" onclick="redirect(0)">Cesupa<img class="arrow" src="../public/img/chevron-left-solid.png"></button>
+            </div>
+            <div id="account">
+                <button id="login" onclick="redirect(5)">Login</button>
+                <img id="divisor" src="../public/img/rectangle.png" alt="">
+                <button id="ajuda">Ajuda</button>
+            </div>
+        </div>
+    </header>
+    <div id="center">
+        <section id="box">
+            <img id="logo2" src="../public/img/logo-cesubank-grey.png" alt="">
+            <h2>Crie sua conta do CesuBank</h2>
+            <div id="infos">
+                <input class="cadastroInfo" id="nome" type="text" placeholder="Nome">
+                <input class="cadastroInfo" id="sobrenome" type="text" placeholder="Sobrenome">
+                <input class="cadastroInfo" id="data_de_nasc" type="text" placeholder="Data de Nascimento"><br>
+                <input class="cadastroInfo" id="cpf" type="number" placeholder="CPF"><br>
+                <input class="cadastroInfo" id="email" type="text" placeholder="E-Mail">
+                <input class="cadastroInfo" id="rg" type="text" placeholder="RG"><br>
+                <input class="cadastroInfo" id="senha" type="password" placeholder="Senha">
+                <input class="cadastroInfo" id="cep" type="text" placeholder="CEP">
+            </div>
+            <button id="submit">Confirmar Cadastro</button>
+        </section>
+    </div>
+    <script src="../public/javascript/index.js"></script>
+</body>
+
+</html>
