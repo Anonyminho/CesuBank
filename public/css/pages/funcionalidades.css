@@ -21,17 +21,6 @@ h2 {
     opacity: 20%;
 }
 
-.back {
-    margin-top: 10px;
-    width: 40px;
-    margin-left: 25px;
-    color: black;
-}
-
-.back:hover {
-    cursor: pointer;
-}
-
 #logo1 {
     padding-left: 15px;
     padding-bottom: 12px;

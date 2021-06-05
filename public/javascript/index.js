@@ -19,10 +19,11 @@ const links =
     "../public/funcionalidades.html",
     "../public/criadores.html", 
     "../public/cadastro.html",
-    "../public/login.html"
+    "../public/login.html",
+    "../public/minha-conta.html"
 ]
 
 function redirect(index) {
-    window.location.href = links[index]
     localStorage.setItem('users', JSON.stringify(users))
+    window.location.href = links[index]
 }
