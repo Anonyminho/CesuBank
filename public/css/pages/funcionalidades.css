@@ -21,6 +21,11 @@ h2 {
     opacity: 20%;
 }
 
+#logo1 {
+    padding-left: 15px;
+    padding-bottom: 12px;
+}
+
 #box {
     width: 800px;
     height: 570px;

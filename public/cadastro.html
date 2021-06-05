@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="../public/css/pages/cadastro.css">
     <link rel="shortcut icon" href="../public/img/logo-cesubank-blue.png" type="image/x-icon">
+    <script src="../public/javascript/db.js"></script>
+    <script src="../public/javascript/funcionalidades.js"></script>
 </head>
 
 <body>
@@ -33,16 +35,17 @@
             <img id="logo2" src="../public/img/logo-cesubank-grey.png" alt="">
             <h2>Crie sua conta do CesuBank</h2>
             <div id="infos">
-                <input class="cadastroInfo" id="nome" type="text" placeholder="Nome">
-                <input class="cadastroInfo" id="sobrenome" type="text" placeholder="Sobrenome">
-                <input class="cadastroInfo" id="data_de_nasc" type="text" placeholder="Data de Nascimento"><br>
-                <input class="cadastroInfo" id="cpf" type="number" placeholder="CPF"><br>
-                <input class="cadastroInfo" id="email" type="text" placeholder="E-Mail">
+                <input class="cadastroInfo" id="nome" type="text" placeholder="Nome | ex:Carlinhos">
+                <input class="cadastroInfo" id="sobrenome" type="text" placeholder="Sobrenome | ex:Brown">
+                <input class="cadastroInfo" id="data_de_nasc" type="date"><br>
+                <input class="cadastroInfo" id="cpf" type="text" placeholder="CPF | ex:000.000.000-00"><br>
+                <input class="cadastroInfo" id="email" type="text" placeholder="E-mail">
                 <input class="cadastroInfo" id="rg" type="text" placeholder="RG"><br>
-                <input class="cadastroInfo" id="senha" type="password" placeholder="Senha">
-                <input class="cadastroInfo" id="cep" type="text" placeholder="CEP">
+                <input class="cadastroInfo" id="senha" type="password" placeholder="Senha de até 8 números" maxlength="8">
+                <input class="cadastroInfo" id="cep" type="text" placeholder="CEP | ex:00000-000" maxlength="9">
             </div>
-            <button id="submit">Confirmar Cadastro</button>
+            <button id="submit" onclick="cadastrar()">Confirmar Cadastro</button>
+            <a id="cadastrar" href="../public/login.html">Já possui conta?</a>
         </section>
     </div>
     <script src="../public/javascript/index.js"></script>

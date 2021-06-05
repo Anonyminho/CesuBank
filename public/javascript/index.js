@@ -1,3 +1,17 @@
+if (localStorage.getItem('users')) {
+    users = localStorage.getItem('users').split('},{');
+}
+
+for (var c = 0; c < users.length; c++) {
+    if (users[c][0] != '{') {
+        users[c] = '{' + users[c];
+    }
+
+    if (users[c][users[c].length - 1] != '}') {
+        users[c] += '}';
+    }
+}
+
 const links = [
   'https://www.cesupa.br/',
   '../public/landing-page.html',
@@ -5,10 +19,10 @@ const links = [
   '../public/criadores.html',
   '../public/cadastro.html',
   '../public/login.html',
+  '../public/minha-conta.html'
 ];
 
-// eslint-disable-next-line no-unused-vars
 function redirect(index) {
-  // eslint-disable-next-line no-undef
+
   window.location.href = links[index];
 }
