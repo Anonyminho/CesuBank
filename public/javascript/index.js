@@ -12,18 +12,17 @@ for (var c = 0; c < users.length; c++) {
     }
 }
 
-const links = 
-[
-    "https://www.cesupa.br/",
-    "../public/landing-page.html",
-    "../public/funcionalidades.html",
-    "../public/criadores.html", 
-    "../public/cadastro.html",
-    "../public/login.html",
-    "../public/minha-conta.html"
-]
+const links = [
+  'https://www.cesupa.br/',
+  '../public/landing-page.html',
+  '../public/funcionalidades.html',
+  '../public/criadores.html',
+  '../public/cadastro.html',
+  '../public/login.html',
+  '../public/minha-conta.html'
+];
 
 function redirect(index) {
-    localStorage.setItem('users', JSON.stringify(users))
-    window.location.href = links[index]
+
+  window.location.href = links[index];
 }
