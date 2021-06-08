@@ -1,46 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CesuBank | Banco digital</title>
-    <link rel="stylesheet" href="../public/css/main.css">
-    <link rel="stylesheet" href="../public/css/pages/funcionalidades.css">
-    <link rel="shortcut icon" href="../public/img/logo-cesubank-blue.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/pages/funcionalidades.css">
+  <title>Home</title>
 </head>
-
 <body>
-    <header id="headBar">
-        <div id="buttons">
-            <img class="back" src="../public/img/chevron-left-solid.png" onclick="redirect(1)">
-            <img id="logo1" src="../public/img/logo-cesubank-blue.png" alt="">
-            <div id="navButtons">
-                <button id="funcoes" onclick="redirect(2)">Funcionalidades<img class="arrow"
-                        src="../public/img/chevron-left-solid.png"></button>
-                <button id="criadores" onclick="redirect(3)">Criadores<img class="arrow"
-                        src="../public/img/chevron-left-solid.png"></button>
-                <button id="cesupa" onclick="redirect(0)">Cesupa<img class="arrow"
-                        src="../public/img/chevron-left-solid.png"></button>
-            </div>
-            <div id="account">
-                <button id="login" onclick="redirect(5)">Login</button>
-                <img id="divisor" src="../public/img/rectangle.png" alt="">
-                <button id="ajuda">Ajuda</button>
-            </div>
-        </div>
+    <header>
+      <div>
+        <a href="./index.html">
+          <img src="./img/arrow.svg">
+          <img src="./img/logo-cesubank-blue.png">
+        </a>
+      </div>
+      <div>
+        <ul>
+          <div>
+            <a href="./funcionalidades.html"><li>Funcionalidades</li><img src="./img/arrow.svg"></a>
+            <a href="./criadores.html"><li>Criadores</li><img src="./img/arrow.svg"></a>
+            <a href="https://www.cesupa.br/"><li>Cesupa</li><img src="./img/arrow.svg"></a>
+          </div>
+          <div>
+            <a href="./login.html"><li>Login</li></a>
+            <span></span>
+            <a href=""><li>Ajuda</li></a>
+          </div>
+        </ul>
+      </div>
     </header>
-    <div id="center">
-        <section id="box">
-            <img id="logo2" src="../public/img/logo-cesubank-grey.png" alt="">
-            <h2>Funcionalidades do CesuBank</h2>
-            <img id="infos" src="../public/img/funcionalidades.png" alt="">
-            <button id="cadastro" onclick="redirect(4)">Cadastre-se</button>
-            <button id="acesso" onclick="redirect(5)">Acesse sua conta</button>
-        </section>
-    </div>
-    <script src="../public/javascript/index.js"></script>
+    <main>
+      <div>
+        <h1>Funcionalidades do CesuBank</h1>
+        <p>
+          Nós da CesuBank, disponibilizamos diversas funcionalidades 
+          completamente gratuitas, como:
+        </p>
+        <ul>
+          <li>Depositos</li>
+          <li>Saques</li>
+          <li>Transferências</li>
+          <li>Compatilidade com PIX</li>
+          <li>Extrato</li>
+          <li>Visualização de Saldo</li>
+        </ul>
+        <div>
+          <a href="./cadastro.html">
+            <button class="buttons">Cadastre-se</button>
+          </a>
+          <a href="./login.html">
+            <button class="buttons">Acesse sua Conta</button>
+          </a>
+        </div>
+      </div>
+    </main>
 </body>
-
 </html>

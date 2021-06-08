@@ -1,0 +1,15 @@
+main > div {
+  justify-content: space-between;
+
+  width: 60rem;
+  height: 40rem;
+}
+
+main > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  margin: 3rem 0;
+}

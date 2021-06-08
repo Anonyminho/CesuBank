@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/pages/login.css">
+  <link rel="stylesheet" href="./css/pages/depositar-sacar.css">
   <title>Home</title>
 </head>
 <body>
     <header>
       <div>
-        <a href="./index.html">
+        <a href="./minha-conta.html">
           <img src="./img/arrow.svg">
           <img src="./img/logo-cesubank-blue.png">
         </a>
@@ -19,33 +19,31 @@
       <div>
         <ul>
           <div>
-            <a href="./funcionalidades.html"><li>Funcionalidades</li><img src="./img/arrow.svg"></a>
-            <a href="./criadores.html"><li>Criadores</li><img src="./img/arrow.svg"></a>
             <a href="https://www.cesupa.br/"><li>Cesupa</li><img src="./img/arrow.svg"></a>
+            <a href="./criadores.html"><li>Criadores</li><img src="./img/arrow.svg"></a>
+            <a href="./minha-conta.html"><li>Minha Conta</li><img src="./img/arrow.svg"></a>
           </div>
           <div>
-            <a href="./login.html"><li>Login</li></a>
-            <span></span>
-            <a href=""><li>Ajuda</li></a>
+            <!-- Deixar para não entrar em conflito com CSS -->
+            <!-- Correção em planejamento -->
           </div>
         </ul>
       </div>
     </header>
     <main>
       <div>
-        <div>
+        <div class="titleAccount">
           <img src="./img/logo-cesubank-blue.png">
-          <h1>Acessar sua conta do CesuBank</h1>
+          <h2>
+            Pix
+            <span id="lineStyle"></span>
+          </h2>
         </div>
-        <div>
-          <input type="email" placeholder="Email"><br>
-          <button class="buttons">
-            Entrar na Conta
-          </button>
-          <a href="">
-            <p>Esqueceu a senha?</p>
-          </a>
-        </div>
+        <input type="text" placeholder="Chave Pix">
+        <input type="text" placeholder="Valor">
+        <button class="buttons">
+          Transferência Pix
+        </button>
       </div>
       <div class="displayNum">
         <div>

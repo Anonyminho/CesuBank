@@ -1,0 +1,18 @@
+main > div {
+  width: 40rem;
+}
+
+#modifyPassword {
+  display: flex;
+  justify-content: space-around;
+
+  width: 100%;
+}
+
+.displayNum {
+    width: 17rem;
+}
+
+#pass {
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+main > div {
+  justify-content: space-between;
+
+  width: 40rem;
+  height: 30rem;
+
+  text-align: center;
+}

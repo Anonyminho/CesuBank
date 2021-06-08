@@ -1,0 +1,9 @@
+main > div {
+  width: 40rem;
+  height: 30rem;
+}
+
+#divSacar {
+  height: 25rem;
+  padding: 0 2rem;
+}

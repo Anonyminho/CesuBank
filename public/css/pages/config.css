@@ -1,0 +1,29 @@
+main > div {
+  justify-content: space-between;
+
+  width: 50rem;
+  height: 40rem;
+}
+
+.titleAccount h2 #lineStyle {
+  width: 85%;
+}
+
+main > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 70%;
+
+  margin: 0 0 3rem 0;
+}
+
+.buttons {
+  width: 20rem;
+}
+
+#seeAccount {
+  width: 30rem;
+}

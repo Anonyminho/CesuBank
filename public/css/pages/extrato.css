@@ -1,0 +1,33 @@
+main > div {
+  justify-content: space-between;
+
+  width: 50rem;
+  height: 40rem;
+}
+
+main > div > div {
+  overflow: scroll;
+  width: 100%;
+  height: 82.5%;
+
+  box-shadow: 0 0 10px;
+}
+
+main > div > div > div {
+  width: 100%;
+  height: 8rem;
+  
+  border-bottom: 1px solid;
+}
+
+.sacar {
+  background-color: rgba(210, 45, 45, .7);
+}
+
+.deposito {
+  background-color: rgba(55, 236, 19, .7);
+}
+
+.transferir {
+  background-color: rgba(0, 68, 255, .7);
+}

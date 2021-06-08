@@ -1,0 +1,36 @@
+main div {
+  width: 35%;
+  height: auto;
+}
+
+main > img {
+  opacity: .25;
+}
+
+main div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+
+main h1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: min-content;
+
+  color: gray;
+  font-size: 3rem;
+}
+
+main h1 img {
+  width: 40px;
+  margin: 0 1rem;
+}
+
+.buttons {
+  width: 18rem;
+}

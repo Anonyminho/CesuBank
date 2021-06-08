@@ -1,147 +1,27 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+main {
+  width: 70%;
 }
 
-#logo1 {
-    padding-left: 15px;
-    padding-bottom: 12px;
+main > div:first-child {
+  width: 35rem;
+  height: 30rem;
 }
 
-#center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+main > div:first-child > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#box {
-    width: 600px;
-    height: 670px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.33);
-    border-radius: 25px;
+main > div:first-child img {
+  width: 4rem;
 }
 
-#keyboard {
-    margin-left: 120px;
-    width: 400px;
-    height: 500px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.35);
-    border-radius: 42px;
+main > div:first-child button {
+  margin: 2rem 0 0 0;
 }
 
-
-#title1 {
-    font-weight: bold;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-#title2 {
-    font-weight: bold;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgba(0, 0, 0, 0.6);
-}
-
-#logo {
-    width: 590px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#logo2 {
-    width: 65px;
-    margin-top: 40px;
-}
-
-#infos{
-    width: fit-content;
-    display: grid;
-}
-
-.loginInfo {
-    width: 323px;
-    height: 53px;
-    margin-top: 34px;
-    margin-left: 130px;
-    background: rgba(201, 201, 201, 0.51);
-    border-radius: 15px;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.36);
-    border-color: rgba(0, 0, 0, 0);
-}
-
-#confirm {
-    display: flex;
-    flex-direction: column;
-    width: 590px;
-    margin-top: 40px;
-    justify-content: center;
-    align-items: center;
-}
-
-#submit {
-    width: 292.73px;
-    height: 50px;
-    font-size: 25px;
-    color: #FFFFFF;
-    background: #164A9D;
-    border-color: rgba(0, 0, 0, 0);
-    border-radius: 17px;
-}
-
-#submit:hover{
-    background: rgba(50, 80, 129, 0.59);
-    cursor: pointer;
-}
-
-#botoes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#cadastrar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 11px;
-    text-decoration-line: underline;
-    color: #565151;
-}
-
-.keyNum {
-    width: 80px;
-    height: 71px;
-    margin-bottom: 6px;
-    border-color: rgba(0, 0, 0, 0);
-    background: #C4C4C4;
-    border-radius: 15px;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 20px; 
-    color: #000000;
-}
-
-.keyNum:hover {
-    background: #909090;
-    cursor: pointer;
-
-}
-
-.keyImage {
-    width: 20px;
-}
-
-#apagar {
-    width: 30px;
+main h1 {
+  font-size: 2rem;
 }

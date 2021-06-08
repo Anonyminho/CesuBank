@@ -5,13 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/pages/minha-conta.css">
+  <link rel="stylesheet" href="./css/pages/info.css">
   <title>Home</title>
 </head>
 <body>
     <header>
       <div>
-        <a href="./index.html">
+        <a href="./config.html">
+          <img src="./img/arrow.svg">
           <img src="./img/logo-cesubank-blue.png">
         </a>
       </div>
@@ -31,36 +32,21 @@
     </header>
     <main>
       <div>
-        <a href="./config.html" id="config">
-          <img src="./img/gear.svg" id="configImg">
-        </a>
         <div class="titleAccount">
           <img src="./img/logo-cesubank-blue.png">
           <h2>
-            Bem-vindo(a), <span id="nameUser">"Nome"</span>.
+            Informações da Conta
             <span id="lineStyle"></span>
           </h2>
         </div>
-        <p>O que você deseja fazer hoje?</p>
         <div>
-          <a href="./depositar.html">
-            <button class="buttons">Depositar</button>
-          </a>
-          <a href="./sacar.html">
-            <button class="buttons">Sacar</button>
-          </a>
-          <a href="./saldo.html">
-            <button class="buttons">Verificar Saldo</button>
-          </a>
-          <a href="./extrato.html">
-            <button class="buttons">Extrato</button>
-          </a>
-          <a href="./transferir.html">
-            <button class="buttons">Transferir</button>
-          </a>
-          <a href="./pix.html">
-            <button class="buttons">PIX</button>
-          </a>
+          <h2>Nome: <span id="Nome"></span></h2>
+          <h2>Sobrenome: <span id="Sobrenome"></span></h2>
+          <h2>Data de nascimento: <span id="Data_de_nascimento"></span></h2>
+          <h2>E-mail: <span id="E-mail"></span></h2>
+          <h2>RG: <span id="RG"></span></h2>
+          <h2>CPF: <span id="CPF"></span></h2>
+          <h2>CEP: <span id="CEP"></span></h2>
         </div>
       </div>
     </main>

@@ -1,0 +1,278 @@
+/*
+  width
+  height
+
+  margin
+  padding
+  border-radius
+
+  font-size
+}
+ */
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  
+  user-select: none;
+  background: url('../img/background.jpg') no-repeat center;
+  background-size: cover;
+  
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6.25rem;
+
+  background-color: rgba(255, 255, 255, 0.33);
+}
+
+header div {
+  display: flex;
+  align-items: center;
+
+  margin: 0 1.25rem;
+}
+
+header div:first-child a {
+  display: flex;
+  align-items: center;
+}
+
+header div:first-child img:first-child {
+  width: 3rem; 
+}
+
+header div:first-child img:last-child {
+  width: 4rem;
+  margin: .675rem;
+}
+
+header div:last-child {
+  display: flex;
+}
+
+header div:last-child ul {
+  display: flex;
+}
+
+header div:last-child ul a {
+  display: flex;
+  align-items: center;
+
+  margin: 0 2rem;
+  padding: .625rem .875rem;
+  border-radius: 1rem;
+
+  color: #000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: 0;
+  list-style: none;
+
+  transition: background-color .5s
+}
+
+header div:last-child ul div:first-child img {
+  width: 1rem;
+
+  margin: 0 0 0 .5rem;
+  
+  transform: rotate(-90deg);
+}
+
+header div:last-child ul div:first-child a:hover {
+  background: #c4c4c454;
+}
+
+header div:last-child ul div:last-child a:first-child, .buttons {
+  padding: 1rem 3rem;
+  border-radius: 1.2rem;
+
+  color: #FFF;
+  font-size: 1.35rem;
+  background: #164a9d96;
+  
+}
+
+.buttons {
+  border: 0;
+  margin: .675rem;
+  background: #164a9d;
+
+  font-size: 1.5rem;
+}
+
+header div:last-child ul div:last-child a:first-child:hover {
+  background: rgba(50, 80, 129, 0.59)
+}
+
+header div:last-child ul div:last-child span {
+  width: .175rem;
+  height: 100%;
+
+  background-color: #000;
+}
+
+header div:last-child ul div:last-child a:last-child {
+  padding: 1rem 1.2rem;
+}
+
+header div:last-child ul div:last-child a:last-child:hover {
+  background: #c4c4c454;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 90%;
+}
+
+main > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px;
+  padding: 2rem;
+  background-color: #FFF;
+}
+
+main h1 {
+  color: gray;
+  font-size: 3rem;
+}
+
+main h2 {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+main p {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  width: 22.5rem;
+  height: 2.5rem;
+
+  border: 0;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #80808050;
+
+  font-size: 1.5rem;
+}
+
+.displayNum {
+  justify-content: center;
+
+  width: 25rem;
+  height: 35rem;
+}
+
+.displayNum div {
+  display: flex;
+}
+
+.displayNum #pass {
+  width: 75%;
+
+  margin: 1rem;
+}
+
+.displayNum h1 {
+  font-size: 2rem;
+}
+
+.displayNum h2 {
+  text-align: left;
+}
+
+.displayNum button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+
+  border: 0;
+  border-radius: 1rem;
+  margin: .25rem;
+  background-color: lightgray;
+
+  font-size: 3rem;
+
+  transition: background-color .5s;
+}
+
+.displayNum button:hover {
+  background-color: gray;
+}
+
+.displayNum button img {
+  width: 2rem;
+}
+
+.titleAccount {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+  width: 100%;
+
+  
+}
+
+.titleAccount img {
+  width: 3.5rem;
+  margin: .5rem 0;
+}
+
+.titleAccount h2 {
+  margin: 0 4rem;
+
+  font-size: 2.25rem;
+}
+
+.titleAccount h2 #lineStyle {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 55%;
+  height: 2px;
+
+  background: #164a9d;
+}
+
