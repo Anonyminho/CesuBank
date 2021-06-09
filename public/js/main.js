@@ -1,7 +1,12 @@
 let users;
 let senha;
+let senha_nova;
+let usuario_atual;
 
 senha = ""
+senha_nova = ""
+
+let erros = 0;
 
 // FORMATAR INFORMAÇÃO DENTRO DO LOCAL STORAGE
 
@@ -32,15 +37,18 @@ for (let counter = 0; counter < users.length; counter++) {
     users[counter] = JSON.parse(users[counter]);
 }
 
+usuario_atual = localStorage.getItem('usuario_atual')
+usuario_atual = JSON.parse(usuario_atual)
+
 // RESETAR O MINI ALERT DE ERRO
-if (document.getElementById('erro')){
+if (document.getElementById('erro')) {
     setInterval(() => {
         document.getElementById('erro').innerText = ''
     }, 5000)
 }
 
 //APAGAR USUARIO ATUAL (LOCAL)
-function apagar(){
+function apagar() {
     localStorage.removeItem('usuario_atual')
 }
 
@@ -101,35 +109,37 @@ function cadastro() {
 // PICA
 // TECLADO NUMERICO
 
-function teclado(value) {
+function teclado(value, id) {
     var password = document.getElementById("password");
-    var armazem;
-
+    var NewPassword = document.getElementById("NewPassword");
+    var senhas = [senha, senha_nova]
+    let local = [password, NewPassword]
+    let armazem = ["", ""]
     switch (value) {
         case 10:
-            if (password.textContent) {
-                armazem = password.textContent.split('')
-                armazem.pop()
-                armazem = armazem.join('')
+            if (local[id].textContent) {
+                armazem[id] = local[id].textContent.split('')
+                armazem[id].pop()
+                armazem[id] = armazem[id].join('')
                 senha = senha.split('')
                 senha.pop()
                 senha = senha.join('')
-                password.innerText = armazem
+                local[id].innerText = armazem[id]
             } else {
                 document.getElementById('erro').innerText = 'Ação Inválida'
             }
             break;
         case 11:
-            if (password.textContent) {
-                password.innerText = ""
-                senha = ""
+            if (local[id].textContent) {
+                local[id].innerText = ""
+                senhas[id] = ""
             } else {
                 document.getElementById('erro').innerText = 'Ação Inválida'
             }
             break;
         default:
-            password.innerText += "*"
-            senha += value
+            local[id].innerText += "*"
+            senha[id] += value
             break;
     }
 }
@@ -156,7 +166,47 @@ function login() {
 }
 
 // MINHA CONTA
-
 function myAccount() {
+    usuario_atual = localStorage.getItem('usuario_atual')
+    usuario_atual = JSON.parse(usuario_atual)
+    document.getElementById('nameUser').innerText = `${usuario_atual.nome} ${usuario_atual.sobrenome}`
+}
 
+//SALDO 
+function meuSaldo() {
+    usuario_atual = localStorage.getItem('usuario_atual')
+    usuario_atual = JSON.parse(usuario_atual)
+    document.getElementById('saldo').innerText = `${usuario_atual.saldo},00`
+}
+
+//MOSTRAS INFOS
+function infos() {
+    document.getElementById('nome').innerText = usuario_atual.nome
+    document.getElementById('sobrenome').innerText = usuario_atual.sobrenome
+    document.getElementById('email').innerText = usuario_atual.email
+    document.getElementById('data_de_nascimento').innerText = usuario_atual.data_de_nascimento
+    document.getElementById('cpf').innerText = usuario_atual.cpf
+    document.getElementById('rg').innerText = usuario_atual.rg
+    document.getElementById('cep').innerText = usuario_atual.cep
+
+}
+
+//MUDAR SENHA
+function mudarSenha() {
+    if (senha == usuario_atual.senha) {
+        usuario_atual.senha = senha_nova
+        localStorage.setItem('usuario_atual', JSON.stringify(usuario_atual))
+        for (let c = 0; c < users.length; c++) {
+            if(users[c].usuario == usuario_atual.usuario){
+                users[c].senha = senha_nova
+                localStorage.setItem('users', JSON.stringify(users))
+            }
+        }
+        document.getElementById('erro').style.color = 'green'
+        document.getElementById('erro').innerText = 'Senha Alterada com SUCESSO'
+        document.getElementById('password').innerText = ""
+        document.getElementById('NewPassword').innerText = ""
+    } else {
+        document.getElementById('erro').innerText = 'Senha Atual ERRADA'
+    }
 }

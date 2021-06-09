@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/pages/info.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
+  <script src="./js/db.js"></script>
   <title>Informações da Conta</title>
 </head>
-<body>
+<body onload="infos()">
     <header>
       <div>
         <a href="./config.html">
@@ -41,15 +42,16 @@
           </h2>
         </div>
         <div>
-          <h2>Nome: <span id="Nome"></span></h2>
-          <h2>Sobrenome: <span id="Sobrenome"></span></h2>
-          <h2>Data de nascimento: <span id="Data_de_nascimento"></span></h2>
-          <h2>E-mail: <span id="E-mail"></span></h2>
-          <h2>RG: <span id="RG"></span></h2>
-          <h2>CPF: <span id="CPF"></span></h2>
-          <h2>CEP: <span id="CEP"></span></h2>
+          <h2>Nome: <span id="nome"></span></h2>
+          <h2>Sobrenome: <span id="sobrenome"></span></h2>
+          <h2>Data de nascimento: <span id="data_de_nascimento"></span></h2>
+          <h2>E-mail: <span id="email"></span></h2>
+          <h2>RG: <span id="rg"></span></h2>
+          <h2>CPF: <span id="cpf"></span></h2>
+          <h2>CEP: <span id="cep"></span></h2>
         </div>
       </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>
