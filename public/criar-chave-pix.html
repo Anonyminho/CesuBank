@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/pages/config.css">
+  <link rel="stylesheet" href="./css/pages/criar-chave-pix.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
-  <title>Configurações de perfil</title>
+  <title>Informações da Conta</title>
 </head>
 <body>
     <header>
       <div>
-        <a href="./minha-conta.html">
+        <a href="./chaves-pix.html">
           <img src="./img/arrow.svg">
           <img src="./img/logo-cesubank-blue.png">
         </a>
@@ -36,32 +36,22 @@
         <div class="titleAccount">
           <img src="./img/logo-cesubank-blue.png">
           <h2>
-            Configurações e Informações
+            Criando Chave Pix
             <span id="lineStyle"></span>
           </h2>
         </div>
+        <p>A Chave Pix deve ter 6 dígitos</p>
         <div>
-          <a href="./info.html">
-            <button id="seeAccount" class="buttons">
-              Ver informaçõesda conta
-            </button>
-          </a>
-          <a href="./chaves-pix.html">
-            <button class="buttons">
-              Chaves PIX
-            </button>
-          </a>
-          <a href="./bloquear-conta.html">
-            <button class="buttons">
-              Bloquear Conta
-            </button>
-          </a>
-          <a href="./mudar-senha.html">
-            <button class="buttons">
-              Mudar Senha
-            </button>
-          </a>
+          <input type="text" placeholder="Digite uma Chave ou Gere Uma">
         </div>
+        <button class="buttons">
+          Gerar uma Chave <!-- Gera uma chave aleatória no input -->
+        </button>
+        <a href="./criar-chave-pix.html">
+          <button class="buttons">
+            Criar
+          </button>
+        </a>
       </div>
     </main>
 </body>

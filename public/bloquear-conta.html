@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/pages/config.css">
+  <link rel="stylesheet" href="./css/pages/bloquear-conta.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
-  <title>Configurações de perfil</title>
+  <title>Informações da Conta</title>
 </head>
 <body>
     <header>
       <div>
-        <a href="./minha-conta.html">
+        <a href="./config.html">
           <img src="./img/arrow.svg">
           <img src="./img/logo-cesubank-blue.png">
         </a>
@@ -36,31 +36,44 @@
         <div class="titleAccount">
           <img src="./img/logo-cesubank-blue.png">
           <h2>
-            Configurações e Informações
+            Bloquear Conta
             <span id="lineStyle"></span>
           </h2>
         </div>
         <div>
-          <a href="./info.html">
-            <button id="seeAccount" class="buttons">
-              Ver informaçõesda conta
-            </button>
-          </a>
-          <a href="./chaves-pix.html">
-            <button class="buttons">
-              Chaves PIX
-            </button>
-          </a>
-          <a href="./bloquear-conta.html">
-            <button class="buttons">
-              Bloquear Conta
-            </button>
-          </a>
-          <a href="./mudar-senha.html">
-            <button class="buttons">
-              Mudar Senha
-            </button>
-          </a>
+          <input type="text" placeholder="Confirma Número da Conta">
+          <input type="text" placeholder="Motivo">
+          <button class="buttons">
+            Bloquear
+          </button>
+        </div>
+      </div>
+      <div class="displayNum">
+        <div>
+          <h1>Teclado numérico</h1>
+        </div>
+        <div id="pass">
+          <h2>Senha:&nbsp;<span id="password"></span></h2>
+        </div>
+        <div>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+        </div>
+        <div>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+        </div>
+        <div>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+        </div>
+        <div>
+          <button><img src="./img/backspace-solid.svg"></button>
+          <button>0</button>
+          <button><img src="./img/trash-restore-alt-solid.svg"></button>
         </div>
       </div>
     </main>

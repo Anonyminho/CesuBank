@@ -1,0 +1,14 @@
+main > div {
+  width: 50rem;
+}
+
+main > div:first-child > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 20rem;
+  
+  margin: 2rem 0 0 0;
+}
+

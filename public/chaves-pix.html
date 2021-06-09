@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/pages/config.css">
+  <link rel="stylesheet" href="./css/pages/chaves-pix.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
-  <title>Configurações de perfil</title>
+  <title>Informações da Conta</title>
 </head>
 <body>
     <header>
       <div>
-        <a href="./minha-conta.html">
+        <a href="./config.html">
           <img src="./img/arrow.svg">
           <img src="./img/logo-cesubank-blue.png">
         </a>
@@ -36,32 +36,20 @@
         <div class="titleAccount">
           <img src="./img/logo-cesubank-blue.png">
           <h2>
-            Configurações e Informações
+            Chaves Pix
             <span id="lineStyle"></span>
           </h2>
         </div>
-        <div>
-          <a href="./info.html">
-            <button id="seeAccount" class="buttons">
-              Ver informaçõesda conta
-            </button>
-          </a>
-          <a href="./chaves-pix.html">
-            <button class="buttons">
-              Chaves PIX
-            </button>
-          </a>
-          <a href="./bloquear-conta.html">
-            <button class="buttons">
-              Bloquear Conta
-            </button>
-          </a>
-          <a href="./mudar-senha.html">
-            <button class="buttons">
-              Mudar Senha
-            </button>
-          </a>
+        <div id="displayChaves">
+          <p>Chave (1): peipeipei poupoupou uma chavepix</p>
+          <p>Chave (2): peipeipei poupoupou uma chavepix</p>
+          <p>Chave (3): peipeipei poupoupou uma chavepix</p>
         </div>
+        <a href="./criar-chave-pix.html">
+          <button class="buttons">
+            Criar Chave
+          </button>
+        </a>
       </div>
     </main>
 </body>
