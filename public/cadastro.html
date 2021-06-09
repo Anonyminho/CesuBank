@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/pages/cadastro.css">
-  <title>Home</title>
+  <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
+  <script src="./js/db.js"></script>
+  <title>Cadastrar-se</title>
 </head>
 <body>
     <header>
@@ -35,21 +37,23 @@
       <div>
         <h1>Registro</h1>
         <div>
-          <input type="text" placeholder="Nome">
-          <input type="text" placeholder="Sobrenome">
-          <input type="date" placeholder="dd/mm/aaaa">
-          <input type="text" placeholder="CPF | 000.000.000-00">
-          <input type="email" placeholder="Email">
-          <input type="text" placeholder="RG">
-          <input type="password" placeholder="Senha">
-          <input type="password" placeholder="Confirmar Senha">
-          <input type="text" placeholder="CEP | 00000-000">
+          <input id="nome" type="text" placeholder="Nome">
+          <input id="sobrenome" type="text" placeholder="Sobrenome">
+          <input id="data_de_nascimento" type="date" placeholder="dd/mm/aaaa">
+          <input id="cpf" type="text" placeholder="CPF | 000.000.000-00">
+          <input id="email" type="email" placeholder="Email">
+          <input id="rg" type="text" placeholder="RG">
+          <input id="senha" type="password" placeholder="Senha">
+          <input id="confirmar" type="password" placeholder="Confirmar Senha">
+          <input id="cep" type="text" placeholder="CEP | 00000-000">
         </div>
-        <button class="buttons">
+        <span id="erro" style="color: red; font-size: 40px;"></span>
+        <button class="buttons" onclick="cadastro()">
           Cadastrar
         </button>
         <a href="./login.html"><p>Já tenho conta.</p></a>
       </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>

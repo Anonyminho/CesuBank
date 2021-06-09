@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/pages/login.css">
-  <title>Home</title>
+  <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
+  <script src="./js/db.js"></script>
+  <title>Login</title>
 </head>
 <body>
     <header>
@@ -38,8 +40,8 @@
           <h1>Acessar sua conta do CesuBank</h1>
         </div>
         <div>
-          <input type="email" placeholder="Email"><br>
-          <button class="buttons">
+          <input id="email" type="email" placeholder="Email"><br>
+          <button class="buttons" onclick="login()">
             Entrar na Conta
           </button>
           <a href="">
@@ -76,5 +78,6 @@
         </div>
       </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>
