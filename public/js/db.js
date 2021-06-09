@@ -37,7 +37,7 @@ const usersDB = [
     cep: '66094-555',
     saldo: '1000',
     pix: '',
-  },
+  }
 ];
 
 if (!localStorage.getItem('users')) {
