@@ -10,7 +10,7 @@
   <script src="./js/db.js"></script>
   <title>Login</title>
 </head>
-<body>
+<body onload="apagar()">
     <header>
       <div>
         <a href="./index.html">
@@ -40,7 +40,7 @@
           <h1>Acessar sua conta do CesuBank</h1>
         </div>
         <div>
-          <input id="email" type="email" placeholder="Email"><br>
+          <input id="email" type="email" placeholder="E-Mail" autocomplete="off"><br>
           <button class="buttons" onclick="login()">
             Entrar na Conta
           </button>
@@ -50,6 +50,7 @@
         </div>
       </div>
       <div class="displayNum">
+        <span id="erro" style="color: red; font-size: 30px; font-weight: bold;"></span>
         <div>
           <h1>Teclado numérico</h1>
         </div>
@@ -57,24 +58,24 @@
           <h2>Senha:&nbsp;<span id="password"></span></h2>
         </div>
         <div>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
+          <button onclick="teclado(1)">1</button>
+          <button onclick="teclado(2)">2</button>
+          <button onclick="teclado(3)">3</button>
         </div>
         <div>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
+          <button onclick="teclado(4)">4</button>
+          <button onclick="teclado(5)">5</button>
+          <button onclick="teclado(6)">6</button>
         </div>
         <div>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
+          <button onclick="teclado(7)">7</button>
+          <button onclick="teclado(8)">8</button>
+          <button onclick="teclado(9)">9</button>
         </div>
         <div>
-          <button><img src="./img/backspace-solid.svg"></button>
-          <button>0</button>
-          <button><img src="./img/trash-restore-alt-solid.svg"></button>
+          <button onclick="teclado(10)"><img src="./img/backspace-solid.svg"></button>
+          <button onclick="teclado(0)">0</button>
+          <button onclick="teclado(11)"><img src="./img/trash-restore-alt-solid.svg"></button>
         </div>
       </div>
     </main>
