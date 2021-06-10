@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/pages/chaves-pix.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
+  <script src="./js/db.js"></script>
   <title>Informações da Conta</title>
 </head>
-<body>
+<body onload="mostrarChaves()">
     <header>
       <div>
         <a href="./config.html">
@@ -41,9 +42,9 @@
           </h2>
         </div>
         <div id="displayChaves">
-          <p>Chave (1): peipeipei poupoupou uma chavepix</p>
-          <p>Chave (2): peipeipei poupoupou uma chavepix</p>
-          <p>Chave (3): peipeipei poupoupou uma chavepix</p>
+          <p>Chave (1): <b><span id="chave1"></span></b></p>
+          <p>Chave (2): <b><span id="chave2"></span></b></p>
+          <p>Chave (3): <b><span id="chave3"></span></b></p>
         </div>
         <a href="./criar-chave-pix.html">
           <button class="buttons">
@@ -52,5 +53,6 @@
         </a>
       </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>

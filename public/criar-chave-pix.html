@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/pages/criar-chave-pix.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
+  <script src="./js/db.js"></script>
   <title>Informações da Conta</title>
 </head>
 <body>
@@ -42,17 +43,18 @@
         </div>
         <p>A Chave Pix deve ter 6 dígitos</p>
         <div>
-          <input type="text" placeholder="Digite uma Chave ou Gere Uma">
+          <input id = "pix" type="text" placeholder="Digite uma Chave ou Gere Uma">
         </div>
-        <button class="buttons">
-          Gerar uma Chave <!-- Gera uma chave aleatória no input -->
+        <button class="buttons" onclick="criarChaves(0)">
+          Gerar uma Chave aleatória <!-- Gera uma chave aleatória no input -->
         </button>
-        <a href="./criar-chave-pix.html">
+        <a href="./criar-chave-pix.html" onclick="criarChaves(1)">
           <button class="buttons">
             Criar
           </button>
         </a>
       </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>

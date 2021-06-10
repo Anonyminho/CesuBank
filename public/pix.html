@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/pages/depositar-sacar.css">
   <link rel="shortcut icon" href="./img/logo-cesubank-blue.png" type="image/x-icon">
+  <script src="./js/db.js"></script>
   <title>PIX</title>
 </head>
 <body>
@@ -40,13 +41,14 @@
             <span id="lineStyle"></span>
           </h2>
         </div>
-        <input type="text" placeholder="Chave Pix">
-        <input type="text" placeholder="Valor">
-        <button class="buttons">
+        <input id="chave" type="text" placeholder="Chave Pix">
+        <input id="valor" type="text" placeholder="Valor">
+        <button class="buttons" onclick="pix()">
           Transferência Pix
         </button>
       </div>
       <div class="displayNum">
+        <span id="erro" style="color: red; font-size: 30px; font-weight: bold;"></span>
         <div>
           <h1>Teclado numérico</h1>
         </div>
@@ -54,26 +56,27 @@
           <h2>Senha:&nbsp;<span id="password"></span></h2>
         </div>
         <div>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
+          <button onclick="teclado(1, 0)">1</button>
+          <button onclick="teclado(2, 0)">2</button>
+          <button onclick="teclado(3, 0)">3</button>
         </div>
         <div>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
+          <button onclick="teclado(4, 0)">4</button>
+          <button onclick="teclado(5, 0)">5</button>
+          <button onclick="teclado(6, 0)">6</button>
         </div>
         <div>
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
+          <button onclick="teclado(7, 0)">7</button>
+          <button onclick="teclado(8, 0)">8</button>
+          <button onclick="teclado(9, 0)">9</button>
         </div>
         <div>
-          <button><img src="./img/backspace-solid.svg"></button>
-          <button>0</button>
-          <button><img src="./img/trash-restore-alt-solid.svg"></button>
+          <button onclick="teclado(10, 0)"><img src="./img/backspace-solid.svg"></button>
+          <button onclick="teclado(0, 0)">0</button>
+          <button onclick="teclado(11, 0)"><img src="./img/trash-restore-alt-solid.svg"></button>
         </div>
       </div>
     </main>
+    <script src="./js/main.js"></script>
 </body>
 </html>
