@@ -8,7 +8,6 @@ senha_nova = ""
 
 var erros = 0;
 
-// FORMATAR INFORMAÇÃO DENTRO DO LOCAL STORAGE  
 if (localStorage.getItem('users')) {
     users = localStorage.getItem('users').split('},{');
 }
@@ -65,22 +64,18 @@ for (let counter = 0; counter < extrato.length; counter++) {
 usuario_atual = localStorage.getItem('usuario_atual')
 usuario_atual = JSON.parse(usuario_atual)
 
-// RESETAR O MINI ALERT DE ERRO
 if (document.getElementById('erro')) {
     setInterval(() => {
         document.getElementById('erro').innerText = ''
     }, 5000)
 }
 
-//APAGAR USUARIO ATUAL (LOCAL)
 function apagar() {
     localStorage.removeItem('usuario_atual')
 }
 
-// CADASTRO DE USUARIO
 function cadastro() {
-    // eslint-disable-next-line prefer-const
-    let dados = [
+        let dados = [
         'nome',
         'sobrenome',
         'data_de_nascimento',
@@ -102,9 +97,18 @@ function cadastro() {
         }
     }
 
-    var tamanho = dados[6].split('')
+    var tamanho = dados[6].split('');
+    var result;
+    for (let c = 0; c < users.length; c++) {
+        if (users[c].email == dados[4] || users[c].cpf == dados[3] || users[c].rg == dados[5]) {
+            result = true
+            break;
+        } else {
+            result = false
+        }
+    }
 
-    if (dados[6] === confirm && tamanho.length >= 8) {
+    if (dados[6] === confirm && tamanho.length >= 8 && result == false) {
         users.push(
             {
                 usuario: users.length,
@@ -117,13 +121,15 @@ function cadastro() {
                 rg: dados[5],
                 senha: dados[6],
                 cep: dados[7],
-                saldo: 0,
+                saldo: 0.00,
                 chave1: "",
                 chave2: "",
                 chave3: ""
             });
         localStorage.setItem('users', JSON.stringify(users));
         location.href = './login.html';
+    } else if (result == true) {
+        document.getElementById('erro').innerText = 'Usuario já cadastrado';
     } else {
         document.getElementById('erro').innerText = 'Informação inválida';
     }
@@ -134,12 +140,13 @@ function cadastro() {
     }
 }
 
-// TECLADO NUMERICO
 function teclado(value, id) {
     var password = document.getElementById("password");
     var NewPassword = document.getElementById("NewPassword");
+    
     let local = [password, NewPassword]
     let armazem = ["", ""]
+
     if (id == 0) {
         switch (value) {
             case 10:
@@ -169,7 +176,7 @@ function teclado(value, id) {
                 break;
         }
     }
-    if (id == 1) {  // PREGUIÇA DESCULPA
+    if (id == 1) {
         switch (value) {
             case 10:
                 if (local[id].textContent) {
@@ -200,7 +207,6 @@ function teclado(value, id) {
     }
 }
 
-// LOGIN
 function login() {
     var email = document.getElementById('email').value;
     if (isBlocked() == false) {
@@ -225,21 +231,18 @@ function login() {
     }
 }
 
-// MINHA CONTA
 function myAccount() {
     usuario_atual = localStorage.getItem('usuario_atual')
     usuario_atual = JSON.parse(usuario_atual)
     document.getElementById('nameUser').innerText = `${usuario_atual.nome} ${usuario_atual.sobrenome}`
 }
 
-//SALDO 
 function meuSaldo() {
     usuario_atual = localStorage.getItem('usuario_atual')
     usuario_atual = JSON.parse(usuario_atual)
-    document.getElementById('saldo').innerText = `${usuario_atual.saldo},00`
+    document.getElementById('saldo').innerText = `${usuario_atual.saldo}`
 }
 
-//MOSTRAS INFOS
 function infos() {
     document.getElementById('nome').innerText = usuario_atual.nome
     document.getElementById('sobrenome').innerText = usuario_atual.sobrenome
@@ -252,7 +255,6 @@ function infos() {
 
 }
 
-//MOSTRAS CHAVES PIX
 function mostrarChaves() {
     var chaves = [usuario_atual.chave1, usuario_atual.chave2, usuario_atual.chave3]
     if (chaves[0] != "" || chaves[1] != "" || chaves[2] != "") {
@@ -272,7 +274,6 @@ function mostrarChaves() {
     }
 }
 
-//CRIAR CHAVES
 function criarChaves(id) {
     debugger
     let letras = ["a", "e", "i", "o", "u", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
@@ -296,7 +297,7 @@ function criarChaves(id) {
     if (document.getElementById('pix').value) {
         var chave_final = document.getElementById('pix').value
     }
-    if (usuario_atual.chave1 == "") {
+    if (usuario_atual.chave1 == "" && usuario_atual.chave1 != chave_final && usuario_atual.chave2 != chave_final && usuario_atual.chave3 != chave_final) {
         usuario_atual.chave1 = chave_final;
         document.getElementById('pix').value = chave_final
 
@@ -308,7 +309,7 @@ function criarChaves(id) {
             }
         }
 
-    } else if (usuario_atual.chave2 == "") {
+    } else if (usuario_atual.chave2 == "" && usuario_atual.chave1 != chave_final && usuario_atual.chave2 != chave_final && usuario_atual.chave3 != chave_final) {
         usuario_atual.chave2 = chave_final;
         document.getElementById('pix').value = chave_final
 
@@ -321,7 +322,7 @@ function criarChaves(id) {
             }
         }
 
-    } else if (usuario_atual.chave3 == "") {
+    } else if (usuario_atual.chave3 == "" && usuario_atual.chave1 != chave_final && usuario_atual.chave2 != chave_final && usuario_atual.chave3 != chave_final) {
         usuario_atual.chave3 = chave_final;
         document.getElementById('pix').value = chave_final
 
@@ -355,7 +356,6 @@ function criarChaves(id) {
     }
 }
 
-//MUDAR SENHA
 function mudarSenha() {
     erros = 0;
     if (senha == usuario_atual.senha) {
@@ -377,7 +377,6 @@ function mudarSenha() {
     }
 }
 
-//BLOQUEIO DE CONTA VOLUNTARIO
 function bloqueioVoluntario() {
     if (usuario_atual.senha == senha && usuario_atual.usuario == document.getElementById('numero').value) {
         usuario_atual.bloqueio = true
@@ -392,7 +391,6 @@ function bloqueioVoluntario() {
     }
 }
 
-//IS BLOCKED?
 function isBlocked() {
     var email = document.getElementById('email').value;
     for (let c = 0; c < users.length; c++) {
@@ -407,7 +405,6 @@ function isBlocked() {
     }
 }
 
-//BLOQUEIO FORÇADO
 function bloqueioForca() {
     var user;
     var email;
@@ -438,10 +435,10 @@ function bloqueioForca() {
 
 }
 
-//DEPOSITAR
 function depositar() {
     var valor = document.getElementById('valor').value;
-    if (senha == usuario_atual.senha && valor) {
+    if (senha == usuario_atual.senha && valor > 0) {
+        var saldo_inicial = usuario_atual.saldo;
         usuario_atual.saldo = Number(usuario_atual.saldo) + Number(valor)
         localStorage.setItem('usuario_atual', JSON.stringify(usuario_atual))
         for (let c = 0; c < users.length; c++) {
@@ -455,8 +452,10 @@ function depositar() {
                 usuario: usuario_atual.usuario,
                 de_onde: "Eu",
                 metodo: "Deposito",
+                only: false,
                 para: "Eu",
-                quantia: valor
+                quantia: valor,
+                saldo_inicial: saldo_inicial
             })
         document.getElementById('erro').style.color = 'green'
         document.getElementById('erro').innerText = 'Deposito realizado com SUCESSO'
@@ -464,14 +463,14 @@ function depositar() {
         valor = ""
     } else {
         bloqueioForca()
-        document.getElementById('erro').innerText = 'Senha errada'
+        document.getElementById('erro').innerText = 'Deposito não realizado, verifique sua senha ou valor escolhido'
     }
 }
 
-//SACAR
 function saque() {
     var valor = document.getElementById('valor').value;
-    if (senha == usuario_atual.senha && valor && Number(usuario_atual.saldo) - Number(valor) > 0) {
+    if (senha == usuario_atual.senha && valor > 0 && Number(usuario_atual.saldo) - Number(valor) > 0) {
+        var saldo_inicial = usuario_atual.saldo;
         usuario_atual.saldo = Number(usuario_atual.saldo) - Number(valor)
         localStorage.setItem('usuario_atual', JSON.stringify(usuario_atual))
         for (let c = 0; c < users.length; c++) {
@@ -485,8 +484,10 @@ function saque() {
                 usuario: usuario_atual.usuario,
                 de_onde: "Eu",
                 metodo: "Saque",
+                only: false,
                 para: "Fora",
-                quantia: valor
+                quantia: valor,
+                saldo_inicial: saldo_inicial
             })
         document.getElementById('erro').style.color = 'green'
         document.getElementById('erro').innerText = 'Saque realizado com SUCESSO'
@@ -498,10 +499,10 @@ function saque() {
     }
 }
 
-//TRANSFERIR
 function transferir() {
     var valor = document.getElementById('valor').value;
     var numero = document.getElementById('numero').value;
+    var saldo_inicial = usuario_atual.saldo;
     var desconto = () => {
         var ano = Date().split(' ')[3]
         var idade = usuario_atual.data_de_nascimento.split('-')[0];
@@ -521,7 +522,7 @@ function transferir() {
         desconto = 1
     }
     
-    if (senha == usuario_atual.senha && valor && result == true && Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto) > 0 && numero != usuario_atual.usuario) {
+    if (senha == usuario_atual.senha && valor > 0 && result == true && Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto) > 0 && numero != usuario_atual.usuario) {
         console.log(Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto), usuario_atual.saldo);
         usuario_atual.saldo = Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto)
         localStorage.setItem('usuario_atual', JSON.stringify(usuario_atual))
@@ -543,8 +544,10 @@ function transferir() {
                 usuario: usuario_atual.usuario,
                 de_onde: `${usuario_atual.nome} ${usuario_atual.sobrenome}`,
                 metodo: "Transferência Bancária",
+                only: false,
                 para: nome,
-                quantia: valor
+                quantia: valor,
+                saldo_inicial: saldo_inicial
             })
         document.getElementById('erro').style.color = 'green'
         document.getElementById('erro').innerText = 'Transferência realizada com SUCESSO'
@@ -557,30 +560,37 @@ function transferir() {
 
 }
 
-//PIX
+function desconto() {
+    var ano = Date().split(' ')[3]
+    var idade = usuario_atual.data_de_nascimento.split('-')[0];
+    idade = Number(ano) - Number(idade)
+    return (idade >= 60)
+};
+
 function pix() {
     var destinatario = document.getElementById('chave').value;
     var valor = document.getElementById('valor').value;
+    var saldo_inicial = usuario_atual.saldo;
+    var result;
     var desconto = () => {
         var ano = Date().split(' ')[3]
         var idade = usuario_atual.data_de_nascimento.split('-')[0];
         idade = Number(ano) - Number(idade)
         return (idade >= 60)
     };
-    var result;
     for (let c = 0; c < users.length; c++) {
         if (users[c].chave1 == destinatario || users[c].chave2 == destinatario || users[c].chave3 == destinatario) {
             result = true;
             break;
         }
     }
-    if (desconto() == false) {
+   if (desconto() == false) {
         desconto = 0.05
-    }
-    if (desconto() == true) {
+    } else if (desconto() == true) {
         desconto = 1
     }
-    if (senha == usuario_atual.senha && valor && result == true && Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto) > 0) {
+    
+    if (senha == usuario_atual.senha && valor > 0 && result == true && Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto) > 0) {
         usuario_atual.saldo = Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto)
         localStorage.setItem('usuario_atual', JSON.stringify(usuario_atual))
         for (let c = 0; c < users.length; c++) {
@@ -602,39 +612,32 @@ function pix() {
                 de_onde: `${usuario_atual.nome} ${usuario_atual.sobrenome}`,
                 metodo: "PIX",
                 para: nome,
-                quantia: valor
+                quantia: valor,
+                saldo_inicial: saldo_inicial
             })
         document.getElementById('erro').style.color = 'green'
         document.getElementById('erro').innerText = 'PIX realizado com SUCESSO'
         localStorage.setItem('extrato', JSON.stringify(extrato))
         valor = ""
     } else {
-        bloqueioForca()
+        if(senha != usuario_atual.senha)
         document.getElementById('erro').innerText = 'PIX não realizado, verifique sua senha ou seu saldo'
     }
 
 
 }
 
-//MOSTRAR EXTRATO
 function MostrarExtrato() {
     document.getElementById('displayExtrato').innerHTML = ""
     for (let c = 0; c < extrato.length; c++) {
-        if (extrato[c].usuario == usuario_atual.usuario) {
+        if (extrato[c].usuario == usuario_atual.usuario || extrato[c].para == `${usuario_atual.nome} ${usuario_atual.sobrenome}` && extrato[c].only == false) {
             switch (extrato[c].metodo) {
                 case "PIX":
+                    case "Transferência Bancária":
                     document.getElementById('displayExtrato').innerHTML +=
                         `
                 <div class="transferir" style="display:flex; justify-content: center; align-text:center;">
-                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong>Quantia: <strong>${extrato[c].quantia}</strong><br>Método: <strong>${extrato[c].metodo}</strong></p>
-                </div>
-                `
-                    break;
-                case "Transferência Bancária":
-                    document.getElementById('displayExtrato').innerHTML +=
-                        `
-                <div class="transferir" style="display:flex; justify-content: center; align-text:center;">
-                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong>Quantia: <strong>${extrato[c].quantia}</strong><br>Método: <strong>${extrato[c].metodo}</strong></p>
+                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong><br>Quantia: <strong>${extrato[c].quantia}</strong>&nbsp;&nbsp;&nbsp;Método: <strong>${extrato[c].metodo}</strong><br>Saldo Inicial: <strong>${extrato[c].saldo_inicial}</strong>&nbsp;&nbsp;&nbsp;Saldo Final: <strong>${usuario_atual.saldo}</strong></p>
                 </div>
                 `
                     break;
@@ -642,7 +645,7 @@ function MostrarExtrato() {
                     document.getElementById('displayExtrato').innerHTML +=
                         `
                 <div class="sacar" style="display:flex; justify-content: center; align-text:center;">
-                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong><br>Quantia: <strong>${extrato[c].quantia}</strong>&nbsp;&nbsp;&nbsp;Método: <strong>${extrato[c].metodo}</strong></p>&nbsp;&nbsp;&nbsp;
+                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong><br>Quantia: <strong>${extrato[c].quantia}</strong>&nbsp;&nbsp;&nbsp;Método: <strong>${extrato[c].metodo}</strong><br>Saldo Inicial: <strong>${extrato[c].saldo_inicial}</strong>&nbsp;&nbsp;&nbsp;Saldo Final: <strong>${usuario_atual.saldo}</strong></p>
                 </div>
                 `
                     break;
@@ -650,7 +653,7 @@ function MostrarExtrato() {
                     document.getElementById('displayExtrato').innerHTML +=
                         `
                 <div class="deposito" style="display:flex; justify-content: center; align-text:center;">
-                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong><br>Quantia: <strong>${extrato[c].quantia}</strong>&nbsp;&nbsp;&nbsp;Método: <strong>${extrato[c].metodo}</strong></p>
+                    <p>De onde: <strong>${extrato[c].de_onde}</strong>&nbsp;&nbsp;&nbsp;Para onde: <strong>${extrato[c].para}</strong><br>Quantia: <strong>${extrato[c].quantia}</strong>&nbsp;&nbsp;&nbsp;Método: <strong>${extrato[c].metodo}</strong><br>Saldo Inicial: <strong>${extrato[c].saldo_inicial}</strong>&nbsp;&nbsp;&nbsp;Saldo Final: <strong>${usuario_atual.saldo}</strong></p>
                 </div>
                 `
                     break;
