@@ -10,7 +10,7 @@ const usersDB = [
     rg: '1002934',
     senha: '19756216',
     cep: '66094-555',
-    saldo: 5000,
+    saldo: 5000.00,
     chave1: "159456",
     chave2: "777777",
     chave3: ""
@@ -26,7 +26,7 @@ const usersDB = [
     rg: '2112334',
     senha: '123456',
     cep: '66094-555',
-    saldo: 15000,
+    saldo: 15000.00,
     chave1: "11223344",
     chave2: "",
     chave3: ""
@@ -42,7 +42,7 @@ const usersDB = [
     rg: '2154866',
     senha: '654321',
     cep: '66094-555',
-    saldo: 1000,
+    saldo: 1000.00,
     chave1: "",
     chave2: "",
     chave3: ""
