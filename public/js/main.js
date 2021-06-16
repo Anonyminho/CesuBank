@@ -574,27 +574,11 @@ function transferir() {
   }
 }
 
-function desconto() {
-  var ano = Date().split(' ')[3];
-  var idade = usuario_atual.data_de_nascimento.split('-')[0];
-  idade = Number(ano) - Number(idade);
-  return idade >= 60;
-}
-
-;
-
 function pix() {
   var destinatario = document.getElementById('chave').value;
   var valor = document.getElementById('valor').value;
   var saldo_inicial = usuario_atual.saldo;
   var result;
-
-  var desconto = () => {
-    var ano = Date().split(' ')[3];
-    var idade = usuario_atual.data_de_nascimento.split('-')[0];
-    idade = Number(ano) - Number(idade);
-    return idade >= 60;
-  };
 
   for (let c = 0; c < users.length; c++) {
     if (users[c].chave1 == destinatario || users[c].chave2 == destinatario || users[c].chave3 == destinatario) {
@@ -603,14 +587,9 @@ function pix() {
     }
   }
 
-  if (desconto() == false) {
-    desconto = 0.05;
-  } else if (desconto() == true) {
-    desconto = 1;
-  }
 
-  if (senha == usuario_atual.senha && valor > 0 && result == true && Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto) > 0) {
-    usuario_atual.saldo = Number(usuario_atual.saldo) - (Number(valor) + Number(valor) * desconto);
+  if (senha == usuario_atual.senha && valor > 0 && result == true && Number(usuario_atual.saldo) - (Number(valor) + Number(valor)) > 0) {
+    usuario_atual.saldo = Number(usuario_atual.saldo) - (Number(valor) + Number(valor));
     localStorage.setItem('usuario_atual', JSON.stringify(usuario_atual));
 
     for (let c = 0; c < users.length; c++) {
